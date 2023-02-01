@@ -1,0 +1,26 @@
+{
+  "name": "bolt-app-template",
+  "version": "0.0.1",
+  "description": "A basic template to spin up a Bolt app for Slack",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon -r dotenv/config app.js"
+  },
+  "dependencies": {
+    "@slack/bolt": "3.12.2"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.20",
+    "dotenv": "^16.0.3"
+  },
+  "repository": {
+    "url": "https://tbc"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "slack",
+    "bolt"
+  ]
+}
