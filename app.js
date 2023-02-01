@@ -179,7 +179,7 @@ app.action("action-bump-message", async ({ body, client, ack, logger }) => {
         await client.chat.postMessage({
             channel: channelId,
             thread_ts: messageId,
-            text: "*Bump.*",
+            text: "*Bump.*  :eyes:",
         });
     } catch (error) {
         logger.error(error);
