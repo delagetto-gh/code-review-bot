@@ -1,17 +1,16 @@
 {
-  "name": "bolt-app-template",
+  "name": "slack-code-review-bot",
   "version": "0.0.1",
-  "description": "A basic template to spin up a Bolt app for Slack",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon -r dotenv/config app.js"
   },
   "dependencies": {
-    "@slack/bolt": "3.12.2"
+    "@slack/bolt": "^3.12.2"
   },
   "devDependencies": {
-    "nodemon": "2.0.20",
+    "nodemon": "^2.0.20",
     "dotenv": "^16.0.3"
   },
   "repository": {
