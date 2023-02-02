@@ -259,7 +259,7 @@ app.view(
                             {
                                 text: {
                                     type: "plain_text",
-                                    text: ":alarm_clock:  Bump",
+                                    text: ":bell:  Nudge",
                                     emoji: true,
                                 },
                             },
