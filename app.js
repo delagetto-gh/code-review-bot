@@ -39,7 +39,7 @@ app.command("/review", async ({ ack, body, client, logger }) => {
                         type: "section",
                         text: {
                             type: "mrkdwn",
-                            text: "_Use this window to post a code review request to the channel, tagging the necessary reviewers to notify them of the proposed changes in your Swarm._",
+                            text: "_Use this window to post a code review request to the channel, tagging the necessary reviewers to notify them of the proposed changes_",
                         },
                     },
                     {
@@ -220,14 +220,14 @@ app.view(
         // Compose message to send to channel
         let swarmPattern = /https:\/\/(.+)?swarm.+.com\/reviews\/(\d+)(\/)?/;
         let matches = swarm.match(swarmPattern);
-        let itemForReview = swarmPattern.test(swarm) ? `*swarm* <${swarm}|${matches[2]}>` : `*item*\n>${swarm}`;
+        let itemForReview = swarmPattern.test(swarm) ? `_swarm_ *<${swarm}|${matches[2]}>*` : `_item_\n>${swarm}`;
 
         let message = [
             {
                 type: "section",
                 text: {
                     type: "mrkdwn",
-                    text: `> *<@${userId}> has requested a review for* ${itemForReview}`,
+                    text: `>:mega: <@${userId}> _has requested a review for_ ${itemForReview}`,
                 },
             },
             {
@@ -235,7 +235,7 @@ app.view(
                 fields: [
                     {
                         type: "mrkdwn",
-                        text: `*Comments*\n ${comment || "Thanks!  :rocket:"}`,
+                        text: `*Comments*\n ${comment || "Thanks!"}`,
                     },
                     {
                         type: "mrkdwn",
