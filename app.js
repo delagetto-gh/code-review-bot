@@ -216,13 +216,18 @@ app.view(
             .map((reviewerId) => `<@${reviewerId}>`)
             .join(", ");
 
+
         // Compose message to send to channel
+        let swarmPattern = /https:\/\/(.+)?swarm.+.com\/reviews\/(\d+)(\/)?/;
+        let matches = swarm.match(swarmPattern);
+        let itemForReview = swarmPattern.test(swarm) ? `*swarm* <${swarm}|${matches[2]}>` : `*item*\n>${swarm}`;
+
         let message = [
             {
                 type: "section",
                 text: {
                     type: "mrkdwn",
-                    text: `> *<@${userId}> has requested a review for swarm*\n>${swarm}`,
+                    text: `> *<@${userId}> has requested a review for* ${itemForReview}`,
                 },
             },
             {
@@ -230,7 +235,7 @@ app.view(
                 fields: [
                     {
                         type: "mrkdwn",
-                        text: `*Comments*\n ${comment || " "}`,
+                        text: `*Comments*\n ${comment || "Thanks!  :rocket:"}`,
                     },
                     {
                         type: "mrkdwn",
